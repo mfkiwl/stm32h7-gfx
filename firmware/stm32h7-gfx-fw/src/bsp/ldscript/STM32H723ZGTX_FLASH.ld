@@ -203,6 +203,28 @@ SECTIONS
     . = ALIGN(4);
   } >RAM_D3
 
+
+  FontFlashSection :
+  {
+    *(FontFlashSection FontFlashSection.*)
+    *(.gnu.linkonce.r.*)
+    . = ALIGN(0x4);
+  } >FLASH
+
+  TextFlashSection :
+  {
+    *(TextFlashSection TextFlashSection.*)
+    *(.gnu.linkonce.r.*)
+    . = ALIGN(0x4);
+  } >FLASH
+
+  ExtFlashSection :
+  {
+    *(ExtFlashSection ExtFlashSection.*)
+    *(.gnu.linkonce.r.*)
+    . = ALIGN(0x4);
+  } >FLASH
+
   .fw_flash_end :
   {
     _fw_flash_end = .;

@@ -22,6 +22,7 @@
 #define _USE_HW_BUZZER
 #define _USE_HW_GT911
 #define _USE_HW_RTOS
+#define _USE_HW_TOUCHGFX
 
 
 #define _USE_HW_LED

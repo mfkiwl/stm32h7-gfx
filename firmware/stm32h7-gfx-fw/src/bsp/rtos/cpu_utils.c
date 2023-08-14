@@ -35,6 +35,8 @@ To use this module, the following steps should be followed :
 /* Includes ------------------------------------------------------------------*/
 #include "cpu_utils.h"
 #include "bsp.h"
+#include "hw_def.h"
+
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -47,6 +49,8 @@ __IO uint32_t  osCPU_Usage = 0;
 uint32_t       osCPU_IdleStartTime = 0;
 uint32_t       osCPU_IdleSpentTime = 0;
 uint32_t       osCPU_TotalIdleTime = 0;
+
+extern void vApplicationIdleHook_TouchGFX(void);
 
 /* Private functions ---------------------------------------------------------*/
 /**
@@ -61,6 +65,9 @@ void vApplicationIdleHook(void)
     /* Store the handle to the idle task. */
     xIdleHandle = xTaskGetCurrentTaskHandle();
   }
+  #ifdef _USE_HW_TOUCHGFX
+  vApplicationIdleHook_TouchGFX();
+  #endif
 }
 
 /**

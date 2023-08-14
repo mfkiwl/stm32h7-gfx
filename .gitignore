@@ -1,0 +1,4 @@
+firmware/stm32h7-gfx-fw/build/
+firmware/stm32h7-gfx-fw/src/ap/touch-gfx/build/
+firmware/stm32h7-gfx-fw/src/ap/touch-gfx/touchgfx/
+firmware/stm32h7-gfx-fw/src/ap/touch-gfx/simulator/

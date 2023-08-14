@@ -1,6 +1,6 @@
 #include "ap.h"
 #include "thread.h"
-
+#include "touchgfx.h"
 
 
 
@@ -8,6 +8,8 @@
 void apInit(void)
 {  
   thread::init();
+
+  touchgfxInit();
 }
 
 void apMain(void)
